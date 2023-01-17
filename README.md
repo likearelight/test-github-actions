@@ -3,4 +3,4 @@
 
 
 Status of last deployment:<br>
-<img src= "https://github.com/likearelight/test-github-actions/workwlows/CI-CD-Pipeline-to-AWS-ElastikBeanstalk/badge.svg?branch=master"><br>
+<img src= "https://github.com/likearelight/test-github-actions/CI-CD-Pipeline-to-AWS-ElastikBeanstalk/badge.svg?branch=master"><br>
