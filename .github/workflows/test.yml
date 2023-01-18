@@ -56,7 +56,7 @@ jobs:
             --description "CoimmitSHA-${{ github.sha }}"
        
         - name: Deploy new ElasticBeanstalk Application Version
-          run :  aws elasticbeanstalk update-environment  --region eu-west-2 --environment-name ${{env.EB_ENV_NAME}} --version-label "Ver-${{ github.sha }}"
+          run :  aws elasticbeanstalk update-environment  --region eu-west-2 --environment-name ${{env.EB_ENV_NAME}}
        
         - name: Print message for CD finish
           run : echo "CD Pipeline part Finished successfully!"
