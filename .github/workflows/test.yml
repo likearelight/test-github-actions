@@ -5,7 +5,7 @@ env:
     EB_APPLICATION_NAME         : "MyFlask"
     EB_ENV_NAME                 : "Myflask-env"
     DEPLOY_PACKAGE_NAME         : "flask_app_${{ github.sha }}.zip"
-    AWS_REGION_NAME             : "eu-west-2"
+    AWS_REGION_NAME             : "us-west-2"
   
 on: 
     push:
@@ -47,13 +47,13 @@ jobs:
             aws-region             : ${{env.AWS_REGION_NAME}}
         - name: Create new ElasticBeansTalk app
           run : |
-                aws elasticbeanstalk create-application-version \
-                --application-name ${{env.EB_APPLICATION_NAME}} \
-                --source-bundle S3Bucket="${{env.EB_PACKAGE_S3_BUCKET_NAME}}",S3Key="${{env.DEPLOY_PACKAGE_NAME}}" \
-                --version-label "Ver-${{github.sha}}" \
-                --description "CommitSHA-${{github.sha}}"
-                
-        - name: Deply new ElasticBeansTalk app version
+             aws elasticbeanstalk create-application-version \
+             --application-name ${{ env.EB_APPLICATION_NAME }} \
+             --source-bundle S3Bucket="${{ env.EB_PACKAGE_S3_BUCKET_NAME }}",S3Key="${{ env.DEPLOY_PACKAGE_NAME }}" \
+             --version-label "Ver-${{ github.sha }}" \
+             --description "CoimmitSHA-${{ github.sha }}"
+             
+        - name: Deploy new ElasticBeansTalk app version
           run : aws elasticbeanstalk update-enviromet --enviroment-name ${{env.EB_ENV_NAME}} --version-label "Ver-${{github.sha}}"
          
         - name: Print message for success
