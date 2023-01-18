@@ -6,6 +6,7 @@ env:
     EB_ENV_NAME                 : "Myflask1env"
     DEPLOY_PACKAGE_NAME         : "flask_app_${{ github.sha }}.zip"
     AWS_REGION_NAME             : "us-west-2"
+    COMMAND                     : 'deploy-only'
   
 on: 
     push:
