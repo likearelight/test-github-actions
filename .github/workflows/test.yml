@@ -59,7 +59,7 @@ jobs:
           run :  aws elasticbeanstalk update-environment  --region eu-west-2 --environment-name ${{env.EB_ENV_NAME}}
        
         - name: Print message for CD finish
-          run : echo "CD Pipeline part Finished successfully!"
+          run : echo "CD Pipeline part Finished successfully!!"
 
 
                 
